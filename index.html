@@ -544,7 +544,7 @@ body{
 </main>
 </div>
 <!-- API Key Modal -->
-<div class="modal-bg" id="keyModal" style="">
+<div class="modal-bg" id="keyModal" style="display:none;">
 <div class="modal key-modal">
 <div class="modal-title">API 키 설정</div>
 <div class="modal-desc">저장된 키는 대시보드를 새 탭에서 열 때 자동으로 전달됩니다.</div>
@@ -611,10 +611,18 @@ function b64ToBlob(b64, type) {
 // ── Guide ──
 function openGuide() { return window.__openGuideFresh && window.__openGuideFresh(); }
 function saveKeysToStorage(ak, sk) {
-  try { localStorage.setItem('portal_ak', ak); localStorage.setItem('portal_sk', sk); } catch(e) {}
+  try { localStorage.setItem('exosp_access', ak); localStorage.setItem('exosp_secret', sk); } catch(e) {}
+  try { localStorage.removeItem('portal_ak'); localStorage.removeItem('portal_sk'); } catch(e) {}
 }
 function removeKeysFromStorage() {
+  try { localStorage.removeItem('exosp_access'); localStorage.removeItem('exosp_secret'); } catch(e) {}
   try { localStorage.removeItem('portal_ak'); localStorage.removeItem('portal_sk'); } catch(e) {}
+}
+function loadKeys() {
+  var ak = '', sk = '';
+  try { ak = localStorage.getItem('exosp_access') || localStorage.getItem('portal_ak') || ''; } catch(e) {}
+  try { sk = localStorage.getItem('exosp_secret') || localStorage.getItem('portal_sk') || ''; } catch(e) {}
+  return { ak: ak, sk: sk };
 }
 function updateKeyChip() {
   var k = loadKeys();
@@ -1627,7 +1635,7 @@ https://openapi-docs.exosp.com
     var modal = document.getElementById('keyModal');
     if(!modal) return;
     modal.classList.remove('show');
-    modal.style.display = '';
+    modal.style.display = 'none';
   };
 
   function bindKeyButton(){
