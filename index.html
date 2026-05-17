@@ -388,8 +388,8 @@ body{
 }
 .btn-popup:hover{background:rgba(99,102,241,.16);border-color:rgba(99,102,241,.45);}
 .btn-popup svg{width:12px;height:12px;}
-#dashViewerModal{align-items:stretch!important;justify-content:stretch!important;padding:24px!important;}
-.dash-viewer-modal{width:100%!important;height:100%!important;background:#fff!important;border:1px solid rgba(15,23,42,.14)!important;border-radius:16px!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;box-shadow:0 24px 80px rgba(15,23,42,.28)!important;}
+#dashViewerModal{align-items:stretch!important;justify-content:stretch!important;padding:0!important;inset:0!important;}
+.dash-viewer-modal{width:100vw!important;height:100vh!important;background:#fff!important;border:1px solid rgba(15,23,42,.14)!important;border-radius:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;box-shadow:0 24px 80px rgba(15,23,42,.28)!important;}
 .dash-viewer-header{height:52px!important;flex-shrink:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 18px!important;border-bottom:1px solid rgba(15,23,42,.12)!important;background:#fff!important;}
 .dash-viewer-title{font-size:14px!important;font-weight:700!important;color:#111827!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;}
 .dash-viewer-close{padding:7px 14px!important;border-radius:8px!important;border:1px solid rgba(15,23,42,.18)!important;background:#fff!important;color:#334155!important;font-size:12px!important;font-weight:700!important;cursor:pointer!important;}
@@ -440,7 +440,7 @@ body{
   height:100%!important;
   background:#fff!important;
   border:1px solid rgba(15,23,42,.14)!important;
-  border-radius:16px!important;
+  border-radius:0!important;
   overflow:hidden!important;
   display:flex!important;
   flex-direction:column!important;
@@ -1771,7 +1771,7 @@ async function exospCopyPromptText(text){
 
 <style id="exosp-direct-guide-final-style">
 #guideLayerModal.show{display:flex!important;align-items:stretch!important;justify-content:stretch!important;padding:24px!important;}
-#guideLayerModal .guide-direct-modal{width:100%!important;height:100%!important;background:#fff!important;border:1px solid rgba(15,23,42,.14)!important;border-radius:16px!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;box-shadow:0 24px 80px rgba(15,23,42,.28)!important;}
+#guideLayerModal .guide-direct-modal{width:100vw!important;height:100vh!important;background:#fff!important;border:1px solid rgba(15,23,42,.14)!important;border-radius:0!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;box-shadow:0 24px 80px rgba(15,23,42,.28)!important;}
 .guide-direct-header{height:54px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 18px;border-bottom:1px solid rgba(15,23,42,.12);background:#fff;flex-shrink:0;}
 .guide-direct-title{font-size:14px;font-weight:800;color:#111827;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .guide-direct-actions{display:flex;align-items:center;gap:8px;margin-left:auto;}
